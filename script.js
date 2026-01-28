@@ -64,6 +64,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
     let container = document.getElementById('gridContainer');
     let eraser = document.getElementById("eraserBtn");
 
+    //creating the grid
     for(let i = 0;i < 900; ++i)
     {
         let cell = document.createElement('div');
@@ -73,10 +74,12 @@ document.addEventListener("DOMContentLoaded", ()=>{
         cell.classList.add('cells');
         erase(cell, i);
         
-    }   //creating the grid
+    }
+    
+    
     const cells = [...document.getElementsByClassName("cells")];
 
-
+    //changing the color on click
     container.addEventListener("click", (e)=>{
 
         if(e.target.classList.contains('cells')){
@@ -87,9 +90,10 @@ document.addEventListener("DOMContentLoaded", ()=>{
             }    
             e.target.style.backgroundColor = color;
         }
-    }); //changing the color on click
+    }); 
 
 
+    //changing the color on double click
     let isDrawing = false;
     container.addEventListener("dblclick", (e)=>{
         if(e.target.classList.contains('cells'))
@@ -110,10 +114,11 @@ document.addEventListener("DOMContentLoaded", ()=>{
     });
     container.addEventListener("mouseup", ()=>{
         isDrawing = false;
-    }); //changing the color on double click
+    }); 
 
     
 
+    //taking color from color wheel
     colorPicker.addEventListener("change", ()=>{
         color = colorPicker.value;
         eraserMode = false;
@@ -121,9 +126,10 @@ document.addEventListener("DOMContentLoaded", ()=>{
         eraser.style.border = "none";
         document.getElementById(currentColorBox).className = "color";
         addColor(color);
-    }); //taking color from color wheel
+    }); 
 
 
+    //taking color from color boxes
     for(let i = 0; i < colorBoxes.length; ++i)
     {
         document.getElementById(colorBoxes[i]).addEventListener("click", (e)=>{
@@ -136,9 +142,10 @@ document.addEventListener("DOMContentLoaded", ()=>{
         eraserMode = false;
         eraser.style.border = "none";
         }); 
-    }   //taking color from color boxes
+    }
 
 
+    //filling the canvas
     document.getElementById("fillAllBtn").addEventListener("click", () => {
 
         for (let i = 0; i < cells.length; i++) {
@@ -147,7 +154,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
 
         eraserMode = false;
         eraser.style.border = "none";
-    });   //filling the canvas
+    });   
 
 
     eraser.addEventListener("click", ()=>{
@@ -157,6 +164,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
     });
 
 
+    //downloading the pixel art
     document.getElementById("downloadBtn").addEventListener("click", ()=>{
 
         let art = document.getElementById("gridContainer");
@@ -166,7 +174,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
             link.href = canvas.toDataURL("image/png");
             link.click();
         });
-    }); //downloading the pixel art
+    }); 
 
 
     
