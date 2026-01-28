@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pixel Art Maker</title>
+    <link rel="stylesheet" href="styles.css" />
+
+    <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+    <script defer src="script.js"></script>
+
+  </head>
+  <body>
+    <div class="header">
+      <img
+        src="imgs/collegeLogo.jpg"
+        alt="College Logo"
+        class="logo"
+      />
+      <span class="header-text">PIXEL ART MAKER</span>
+    </div>
+
+    <div class="container">
+      <div class="toolbox">
+        <h2>TOOLS</h2>
+
+        <div class="colors">
+          <label class="colorPicker">
+            <input type="color" id="colorPicker"/>
+          </label>
+
+          <div class="color" id="CB1"></div>
+          <div class="color" id="CB2"></div>
+          <div class="color" id="CB3"></div>
+          <div class="color" id="CB4"></div>
+
+          <div class="color" id="CB5"></div>
+          <div class="color" id="CB6"></div>
+          <div class="color" id="CB7"></div>
+          <div class="color" id="CB8"></div>
+          <div class="color" id="CB9"></div>
+
+          <div class="color" id="CB10"></div>
+          <div class="color" id="CB11"></div>
+          <div class="color" id="CB12"></div>
+          <div class="color" id="CB13"></div>
+          <div class="color" id="CB14"></div>
+        </div>
+
+        <button class="btn" id="eraserBtn">ERASER</button>
+        <button class="btn" id="downloadBtn">DOWNLOAD</button>
+        <button class="btn" id="fillAllBtn">FILL ALL</button>
+      </div>
+
+      <div class="canvas">
+        <div class="grid" id="gridContainer"></div>
+      </div>
+    </div>
+    <footer class="footer">
+      <p>
+       <p class="guidance">
+  This project was carried out under the guidance of Dr. Goutam Mali, Assistant Professor, IIIT Kottayam.
+      </p>
+
+        <a href="mailto:goutam@iiitkottayam.ac.in">goutam@iiitkottayam.ac.in</a>
+      </p>
+    </footer>
+  </body>
+</html>
